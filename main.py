@@ -22,6 +22,6 @@ contact =	{
 }
 print(contact)
 
-# This is example of set
+# This is example of set (which will make it unique)
 certifications = {"Azure", "AWS", "Azure"}
 print(certifications)
