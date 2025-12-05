@@ -8,6 +8,7 @@ class FileHandler:
         try:
             with open(self.file_path, "r") as file:
                 self.content = file.read()
+                file.close()  # Close the file
             print("File read successfully!")
         except FileNotFoundError:
             print("Error: File not found.")
@@ -19,6 +20,7 @@ class FileHandler:
         try:
             with open(self.file_path, "a") as file:
                 file.write("\n" + text)
+                file.close()  # Close the file
             print("Text appended successfully!")
         except Exception as e:
             print(f"Could not append to file: {e}")
