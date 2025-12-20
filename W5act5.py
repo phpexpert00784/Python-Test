@@ -4,73 +4,104 @@ class Animal:
         self.name = name
 
     def info(self):
-        print(f"Animal Name: {self.name}")
+        # Common method for all animals
+        print(f"I am an animal named {self.name}")
 
 
-# Level 1 subclasses
+# Child class of Animal
 class Mammal(Animal):
     def __init__(self, name, feature):
         super().__init__(name)
         self.feature = feature
 
+    def show_feature(self):
+        print(f"Mammal feature: {self.feature}")
 
+
+# Child class of Animal
 class Bird(Animal):
     def __init__(self, name, feature):
         super().__init__(name)
         self.feature = feature
 
+    def show_feature(self):
+        print(f"Bird feature: {self.feature}")
 
+
+# Child class of Animal
 class Fish(Animal):
     def __init__(self, name, feature):
         super().__init__(name)
         self.feature = feature
 
+    def show_feature(self):
+        print(f"Fish feature: {self.feature}")
 
-# Level 2 subclasses
+
+# ----- Mammal children -----
+
 class Dog(Mammal):
+    # Function overriding:
+    # walk() is specific to Dog
     def walk(self):
-        print(f"{self.name} can walk")
+        print(f"{self.name} the dog walks on four legs")
 
 
 class Cat(Mammal):
+    # Function overriding:
+    # walk() is specific to Cat
     def walk(self):
-        print(f"{self.name} can walk")
+        print(f"{self.name} the cat walks silently")
 
+
+# ----- Bird children -----
 
 class Eagle(Bird):
+    # Function overriding:
+    # fly() is specific to Eagle
     def fly(self):
-        print(f"{self.name} can fly")
+        print(f"{self.name} the eagle flies very high")
 
 
 class Penguin(Bird):
+    # Function overriding:
+    # Penguins cannot fly, so swim() is implemented instead
     def swim(self):
-        print(f"{self.name} can swim")
+        print(f"{self.name} the penguin swims in cold water")
 
+
+# ----- Fish children -----
 
 class Salmon(Fish):
+    # Function overriding:
+    # swim() behavior for Salmon
     def swim(self):
-        print(f"{self.name} can swim")
+        print(f"{self.name} the salmon swims upstream")
 
 
 class Shark(Fish):
+    # Function overriding:
+    # swim() behavior for Shark
     def swim(self):
-        print(f"{self.name} can swim")
+        print(f"{self.name} the shark swims fast and hunts")
 
 
-# Main program
-if __name__ == "__main__":
-    dog = Dog("Dog", "Warm-blooded")
-    cat = Cat("Cat", "Fur")
-    eagle = Eagle("Eagle", "Wings")
-    penguin = Penguin("Penguin", "Flippers")
-    salmon = Salmon("Salmon", "Gills")
-    shark = Shark("Shark", "Sharp teeth")
+# ----------- Testing the project -----------
 
-    dog.walk()
-    cat.walk()
+dog = Dog("Buddy", "Warm-blooded")
+cat = Cat("Kitty", "Warm-blooded")
 
-    eagle.fly()
-    penguin.swim()
+eagle = Eagle("Rocky", "Feathers")
+penguin = Penguin("Pingo", "Flightless bird")
 
-    salmon.swim()
-    shark.swim()
+salmon = Salmon("Sal", "Cold-blooded")
+shark = Shark("Jaws", "Predator")
+
+dog.walk()
+cat.walk()
+
+eagle.fly()
+penguin.swim()
+
+salmon.swim()
+shark.swim()
